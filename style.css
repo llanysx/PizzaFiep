@@ -197,6 +197,8 @@ body{
 .cardapio{
     background: #000000;
     color: #e6e6e6;
+    padding:80px 20px;
+    text-align: center;
 }
 
 .cardapio h2{
