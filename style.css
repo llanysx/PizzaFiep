@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+h2{
+    font-family: "Playfair Display", serif;
+}
+
+cardapio{
+    background-color: #000;
+}
 
 *{
     margin: 0;
@@ -186,8 +195,8 @@ body{
 }
 
 .cardapio{
-    background: #f4f4f4;
-    color: #000;
+    background: #000000;
+    color: #ffffff;
     padding: 80px 20px;
     text-align: center;
 }
@@ -219,6 +228,7 @@ body{
     display: block;
     font-weight: bold;
     margin: 10px;
+    color: white;
 }
 
 /* itens */
@@ -228,11 +238,13 @@ body{
     font-weight: 15px;
     position: relative;
     padding-left: 15px;
+    color:white;
 }
 
 /* Bolionha igual do figma */
 
 .lista li::before{
     content: "•";
+    color: white;
     
 }
