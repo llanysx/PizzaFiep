@@ -1,41 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
 
-
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Jacques Francois;
+    font-family: 'Jacques Francois', serif; /* arrumei aqui  */
 }
 
 body{
     background: #000;
-    color: #ffffff
+    color: #fff;
 }
 
-/* =================Header=================== */
-
+/* ====================== HEADER =============== */
 .header{
-    position:absolute;
+    position: absolute;
     width: 100%;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     background-color: #1C1C1C;
 
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;   
+
     padding: 20px 80px;
-    z-index: 1000;
+    z-index: 1000;  
 }
 
 .logo{
-    font-size:28px;
+    font-size: 28px;
     font-weight: 500;
 }
-/* Menu icon */
+
+/* MENU ICON(mobile) */
 .menu-toggle{
-    display:flex;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     z-index: 1100;
@@ -43,17 +43,18 @@ body{
 
 .menu-toggle span{
     width: 25px;
-    height:3px;
+    height: 3px;
     background: white;
     margin: 4px 0;
     transition: 0.3s;
 }
+
 /* Menu */
 .menu{
     position: fixed;
-    top:0;
+    top: 0;
     right: -100%;
-    width: 70%;
+    width: 70%; /* Arrumei Aqui */
     height: 100vh;
     background: #111;
     display: flex;
@@ -63,7 +64,7 @@ body{
 }
 
 .menu a{
-    margin:15px 0;
+    margin: 15px 0;
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -73,17 +74,15 @@ body{
     right: 0;
 }
 
-
-/* Overlay Menu */
-
+/* Overlay menu */
 .overlay-menu{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.6);
-    opacity:0;
+    opacity: 0;
     visibility: hidden;
     transition: 0.3s;
     z-index: 900;
@@ -94,57 +93,51 @@ body{
     visibility: visible;
 }
 
-/* ============= hero ============== */
-
+/* =========== hero =========== */
 .hero{
     height: 100vh;
-    background:url('./pizza-Fundo.png') center/cover no-repeat;
-    position: relative;
+    background: url('./pizza-Fundo.png') center/cover no-repeat;
+    position: relative ;
 }
 
 .overlay{
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.2);
     height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0 80px;
 }
-
 .hero-text h2{
-    font-size:56px;
+    font-size: 56px;
     font-weight: 300;
     line-height: 1.2;
     margin-bottom: 20px;
 }
-
 .hero-text{
-    max-width: 1700px;
+    max-width: 500px;
     text-align: right;
 }
-
 .hero-text button{
     padding: 12px 28px;
     background: #ff3c00;
     border: none;
     color: white;
-    border-radius: 70px;
+    border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .hero-text button:hover{
-    background: #410909
+    background: #87331a;
 }
 
-/* ========= Diferenciais ======== */
-
+/* ================= Diferenciais =========== */
 .diferenciais{
     background: #145A32;
     padding: 80px 20px;
-    text-align: center;
+    text-align: center;    
 }
 
 .diferenciais h2{
@@ -153,7 +146,6 @@ body{
 }
 
 /* GRID */
-
 .cards{
     display: flex;
     justify-content: center;
@@ -172,7 +164,6 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 
     transition: 0.3s;
 }
@@ -180,24 +171,24 @@ body{
 .card:hover{
     transform: translateY(-8px);
 }
-/* imagem */
 
+/* imagem */
 .card img{
-    width: 80px;
-    height: 80px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
     margin-bottom: 20px;
 }
 
 .card p{
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.3;
 }
 
 .cardapio{
-    background: #000000;
-    color: #e6e6e6;
-    padding:80px 20px;
+    background: #f4f4f4;
+    color: #000;
+    padding: 80px 20px;
     text-align: center;
 }
 
@@ -205,5 +196,43 @@ body{
     font-size: 32px;
     margin-bottom: 40px;
     font-weight: 500;
+}
 
+/* GRID */
+.lista{
+    display: flex;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.lista ul{
+    list-style: none;
+}
+
+/* titulko das colunas */
+
+.lista ul::before{
+    content: attr(data-title);
+    display: block;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* itens */
+
+.lista li{
+    margin: 6px 0;
+    font-weight: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Bolionha igual do figma */
+
+.lista li::before{
+    content: "•";
+    
 }
